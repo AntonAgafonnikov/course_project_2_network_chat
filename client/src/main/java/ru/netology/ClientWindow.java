@@ -4,10 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class ClientWindow extends JFrame implements ActionListener, ConnectionListener {
     private static final int WIDTH = 600;
@@ -18,8 +17,12 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
     private final JTextField fieldNickname = new JTextField();
     private final JTextField fieldInput = new JTextField();
     private Connection connection;
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        if(!logFile.exists()) {
+            logFile.createNewFile();
+        }
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -66,7 +69,6 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
             return;
         } else if (msg.equals("/exit")) {
             onDisconnect(connection);
-//TODO
         }
         fieldInput.setText(null);
         connection.sendMsg(fieldNickname.getText() + ": " + msg);
@@ -86,22 +88,29 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
 
     @Override
     public void onConnectionReady(Connection connection) {
-        logMsg("Connection ready");
+        String info = "Connection ready";
+        logMsg(info);
+        loggingInFile(info);
     }
 
     @Override
     public void onReceiveString(Connection connection, String msg) {
         logMsg(msg);
+        loggingInFile(msg);
     }
 
     @Override
     public void onDisconnect(Connection connection) {
-        logMsg("Connection close");
+        String info = "Connection close";
+        logMsg(info);
+        loggingInFile(info);
     }
 
     @Override
     public void onException(Connection connection, Exception e) {
-        logMsg("Connection exception: " + e);
+        String info = "Connection exception: " + e;
+        logMsg(info);
+        loggingInFile(info);
     }
 
     private synchronized void logMsg(String msg) {
@@ -112,5 +121,18 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
                 logConsole.setCaretPosition(logConsole.getDocument().getLength());
             }
         });
+    }
+    public void loggingInFile(String msg) {
+        try (BufferedWriter bwLog = new BufferedWriter(new FileWriter(logFile, true))){
+            bwLog.write(msg);
+            bwLog.newLine();
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    private String getTime() {
+        return " (" + LocalTime.now().format(dtf) + ") ";
     }
 }

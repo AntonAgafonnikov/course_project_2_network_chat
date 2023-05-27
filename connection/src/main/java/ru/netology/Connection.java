@@ -27,6 +27,9 @@ public class Connection {
                     connectionListener.onConnectionReady(Connection.this);
                     while (!listeningThread.isInterrupted()) {
                         String msg = in.readLine();
+                        if (msg.equals("/exit")) {
+                            listeningThread.interrupt();
+                        }
                         connectionListener.onReceiveString(Connection.this, msg);
                     }
                 } catch (IOException e) {
