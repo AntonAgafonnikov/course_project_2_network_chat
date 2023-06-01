@@ -75,9 +75,8 @@ public class Server implements ConnectionListener{
 
     private void sendAllConnection(Connection currentConnection, String info) {
         System.out.println(info);
-        final int sizeConnectionsList = connectionsList.size();
-        for (int i = 0; i < sizeConnectionsList; i++) {
-            connectionsList.get(i).sendMsg(info);
+        for (Connection connection : connectionsList) {
+            connection.sendMsg(info);
         }
     }
 
@@ -87,7 +86,8 @@ public class Server implements ConnectionListener{
             bwLog.newLine();
         }
         catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
+            loggingInFile(e.toString());
         }
     }
 

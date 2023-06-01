@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -58,7 +59,9 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
         try {
             connection = new Connection(this, ip, port);
         } catch (IOException e) {
-            logMsg("Connection exception: " + e);
+            String info = "Connection exception: " + e;
+            logMsg(info);
+            loggingInFile(info);
         }
     }
 
@@ -69,6 +72,12 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
             return;
         } else if (msg.equals("/exit")) {
             onDisconnect(connection);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+            ClientWindow.this.dispatchEvent(new WindowEvent(ClientWindow.this, WindowEvent.WINDOW_CLOSING));
         }
         fieldInput.setText(null);
         connection.sendMsg(fieldNickname.getText() + ": " + msg);
@@ -128,7 +137,8 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
             bwLog.newLine();
         }
         catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
+            loggingInFile(e.toString());
         }
     }
 

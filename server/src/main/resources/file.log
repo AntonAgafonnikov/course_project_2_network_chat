@@ -1,3 +1,37 @@
+Client connected: Connection: /127.0.0.1: 1967
+Adam: Check
+Adam: Logging
+Adam: Vye
+Connection exception:java.net.SocketException: Connection reset
+Client disconnected: Connection: /127.0.0.1: 1967
+Client connected: Connection: /127.0.0.1: 1977
+Nick: Second check logging
+Nick: WUP&!
+Nick: bb
+Connection exception:java.net.SocketException: Connection reset
+Client disconnected: Connection: /127.0.0.1: 1977
+================================================================
+(20:23:38.376378) Client connected: Connection: /127.0.0.1: 2240
+Kim: Hey
+Kim: How r u?
+Kim: When time
+(20:24:24.920040200) Connection exception:java.net.SocketException: Connection reset
+(20:24:24.922040300) Client disconnected: Connection: /127.0.0.1: 2240
+(20:36:01) (20:36:00) Client connected: Connection: /127.0.0.1: 2460
+(20:36:15) Adam: wup
+(20:36:20) Adam: where TIME
+(20:36:22) Adam: aaa
+(20:36:25) Adam: by
+(20:36:27) (20:36:27) Connection exception:java.net.SocketException: Connection reset
+(20:36:27) (20:36:27) Client disconnected: Connection: /127.0.0.1: 2460
+(20:37:01) (20:37:01) Client connected: Connection: /127.0.0.1: 2482
+(20:37:06) выаыв: ваываыв
+(20:37:07) выаыв: фыв
+(20:37:07) выаыв: ыфв
+(20:37:07) выаыв: фы
+(20:37:08) выаыв: вфыв
+(20:37:10) (20:37:10) Connection exception:java.net.SocketException: Connection reset
+(20:37:10) (20:37:10) Client disconnected: Connection: /127.0.0.1: 2482
  (20:44:28)  (20:44:28) Client connected: Connection: /127.0.0.1: 2698
  (20:44:39)  (20:44:39) Adam: Check
  (20:44:44)  (20:44:44) Adam: Hey
@@ -64,26 +98,48 @@
  (22:38:43) Акк: /exit
  (22:39:02) Connection exception:java.net.SocketException: Connection reset
  (22:39:02) Client disconnected: Connection: /127.0.0.1: 4063
- (22:30:24) Client connected: Connection: /127.0.0.1: 59724
- (22:30:43) Joy: Check serv on home
- (22:30:52) Connection exception:java.net.SocketException: Connection reset
- (22:30:52) Client disconnected: Connection: /127.0.0.1: 59724
- (11:05:15) Client connected: Connection: /127.0.0.1: 52859
- (11:05:21) Ad: Check
- (11:05:25) Ad: Disc
- (11:05:28) Ad: exit
- (11:05:34) Ad: /exit
- (11:06:30) Connection exception:java.net.SocketException: Connection reset
- (11:06:30) Client disconnected: Connection: /127.0.0.1: 52859
- (19:02:34) Client connected: Connection: /127.0.0.1: 50153
- (19:02:42) Adam: Check
- (19:02:43) Adam: log
- (19:02:45) Adam: file
- (19:02:49) Connection exception:java.net.SocketException: Connection reset
- (19:02:49) Client disconnected: Connection: /127.0.0.1: 50153
- (19:03:15) Client connected: Connection: /127.0.0.1: 50169
- (19:03:26) Kay: Hi
- (19:03:28) Kay: chec
- (19:03:31) Kay: log
- (19:03:34) Connection exception:java.net.SocketException: Connection reset
- (19:03:34) Client disconnected: Connection: /127.0.0.1: 50169
+ (18:41:02) Client connected: Connection: /127.0.0.1: 1492
+ (18:41:08) Din: Check
+ (18:41:11) Din: logging
+ (18:41:16) Din: in laptop
+ (18:41:18) Connection exception:java.net.SocketException: Connection reset
+ (18:41:18) Client disconnected: Connection: /127.0.0.1: 1492
+ (18:49:26) Client connected: Connection: /127.0.0.1: 1560
+ (18:49:36) Fil: Hi
+ (18:49:42) Fil: Bye
+ (18:49:45) Fil: /exit
+ (18:49:50) Fil: well
+ (18:49:52) Fil: no
+ (18:49:57) Connection exception:java.net.SocketException: Connection reset
+ (18:49:57) Client disconnected: Connection: /127.0.0.1: 1560
+ (18:56:36) Client connected: Connection: /127.0.0.1: 1686
+ (18:56:46) Nei: Hi
+ (18:56:49) Nei: bye
+ (18:56:52) Nei: /exit
+ (18:58:38) Client connected: Connection: /127.0.0.1: 1701
+ (18:58:50) Ury: Hi hi
+ (18:58:52) Ury: bye
+ (18:58:55) Ury: /exit
+ (18:59:20) Client connected: Connection: /127.0.0.1: 1708
+ (18:59:30) Jey: Hihi
+ (18:59:32) Jey: bb
+ (18:59:36) Jey: /exit
+ (18:59:52) Connection exception:java.net.SocketException: Connection reset
+ (18:59:52) Client disconnected: Connection: /127.0.0.1: 1708
+ (19:03:50) Client connected: Connection: /127.0.0.1: 1773
+ (19:03:56) Chad: hihi
+ (19:03:59) Chad: bb
+ (19:04:03) Connection exception:java.net.SocketException: Connection reset
+ (19:04:03) Client disconnected: Connection: /127.0.0.1: 1773
+ (16:49:17) Client connected: Connection: /127.0.0.1: 1731
+ (16:49:27) Кир: Хай
+ (16:49:41) Кир: Проверка работы чата
+ (16:49:58) Client connected: Connection: /127.0.0.1: 1737
+ (16:50:09) Джейн: Привет
+ (16:50:25) Джейн: Тест второго подключения
+ (16:50:39) Кир: Привет Джейн
+ (16:50:57) Кир: Разрыв
+ (16:51:03) Connection exception:java.net.SocketException: Connection reset
+ (16:51:03) Client disconnected: Connection: /127.0.0.1: 1731
+ (16:51:13) Connection exception:java.net.SocketException: Connection reset
+ (16:51:13) Client disconnected: Connection: /127.0.0.1: 1737

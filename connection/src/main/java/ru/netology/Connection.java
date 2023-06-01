@@ -52,7 +52,7 @@ public class Connection {
         }
     }
 
-    public synchronized void disconnect(){
+    private synchronized void disconnect(){
         listeningThread.interrupt();
         try {
             socket.close();

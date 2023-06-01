@@ -8,3 +8,79 @@ Connection ready
  (19:03:26) Kay: Hi
  (19:03:28) Kay: chec
  (19:03:31) Kay: log
+Connection ready
+ (18:41:02) Client connected: Connection: /127.0.0.1: 1492
+ (18:41:08) Din: Check
+ (18:41:11) Din: logging
+ (18:41:16) Din: in laptop
+Connection ready
+ (18:49:26) Client connected: Connection: /127.0.0.1: 1560
+ (18:49:36) Fil: Hi
+ (18:49:42) Fil: Bye
+Connection close
+ (18:49:45) Fil: /exit
+ (18:49:50) Fil: well
+ (18:49:52) Fil: no
+Connection ready
+ (18:56:36) Client connected: Connection: /127.0.0.1: 1686
+ (18:56:46) Nei: Hi
+ (18:56:49) Nei: bye
+Connection close
+ (18:56:52) Nei: /exit
+Connection ready
+ (18:58:38) Client connected: Connection: /127.0.0.1: 1701
+ (18:58:38) Client connected: Connection: /127.0.0.1: 1701
+ (18:58:50) Ury: Hi hi
+ (18:58:50) Ury: Hi hi
+ (18:58:52) Ury: bye
+ (18:58:52) Ury: bye
+Connection close
+ (18:58:55) Ury: /exit
+ (18:58:55) Ury: /exit
+ (18:59:20) Client connected: Connection: /127.0.0.1: 1708
+Connection ready
+ (18:59:20) Client connected: Connection: /127.0.0.1: 1708
+ (18:59:20) Client connected: Connection: /127.0.0.1: 1708
+ (18:59:30) Jey: Hihi
+ (18:59:30) Jey: Hihi
+ (18:59:30) Jey: Hihi
+ (18:59:32) Jey: bb
+ (18:59:32) Jey: bb
+ (18:59:32) Jey: bb
+Connection close
+ (18:59:36) Jey: /exit
+ (18:59:36) Jey: /exit
+ (18:59:36) Jey: /exit
+ (18:59:52) Client disconnected: Connection: /127.0.0.1: 1708
+ (18:59:52) Client disconnected: Connection: /127.0.0.1: 1708
+Connection ready
+ (19:03:50) Client connected: Connection: /127.0.0.1: 1773
+ (19:03:50) Client connected: Connection: /127.0.0.1: 1773
+ (19:03:50) Client connected: Connection: /127.0.0.1: 1773
+ (19:03:56) Chad: hihi
+ (19:03:56) Chad: hihi
+ (19:03:56) Chad: hihi
+ (19:03:59) Chad: bb
+ (19:03:59) Chad: bb
+ (19:03:59) Chad: bb
+Connection close
+ (19:04:03) Client disconnected: Connection: /127.0.0.1: 1773
+ (19:04:03) Client disconnected: Connection: /127.0.0.1: 1773
+Connection ready
+ (16:49:17) Client connected: Connection: /127.0.0.1: 1731
+ (16:49:27) Кир: Хай
+ (16:49:41) Кир: Проверка работы чата
+Connection ready
+ (16:49:58) Client connected: Connection: /127.0.0.1: 1737
+ (16:49:58) Client connected: Connection: /127.0.0.1: 1737
+ (16:50:09) Джейн: Привет
+ (16:50:09) Джейн: Привет
+ (16:50:25) Джейн: Тест второго подключения
+ (16:50:25) Джейн: Тест второго подключения
+ (16:50:39) Кир: Привет Джейн
+ (16:50:39) Кир: Привет Джейн
+ (16:50:57) Кир: Разрыв
+ (16:50:57) Кир: Разрыв
+Connection close
+ (16:51:03) Client disconnected: Connection: /127.0.0.1: 1731
+Connection close
