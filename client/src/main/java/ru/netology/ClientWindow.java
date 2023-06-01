@@ -6,10 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.*;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
-import static ru.netology.Logger.loggingInFile;
+import static ru.netology.Logger.*;
 
 public class ClientWindow extends JFrame implements ActionListener, ConnectionListener {
     private static final int WIDTH = 600;
@@ -20,18 +18,11 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
     private final JTextField fieldNickname = new JTextField();
     private final JTextField fieldInput = new JTextField();
     private Connection connection;
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public static void main(String[] args) throws IOException {
-        if(!logFile.exists()) {
-            logFile.createNewFile();
-        }
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new ClientWindow();
-            }
-        });
+        createSettingsFile(settingsFile);
+        createLogFile(logFile);
+        SwingUtilities.invokeLater(ClientWindow::new);
     }
 
     private ClientWindow() {
@@ -61,9 +52,7 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
         try {
             connection = new Connection(this, ip, port);
         } catch (IOException e) {
-            String info = "Connection exception: " + e;
-            logMsg(info);
-            loggingInFile(logFile, info);
+            logMsg(loggingInFile(logFile, CONNECTION_EXCEPTION + e));
         }
     }
 
@@ -99,9 +88,8 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
 
     @Override
     public void onConnectionReady(Connection connection) {
-        String info = "Connection ready";
-        logMsg(info);
-        loggingInFile(logFile, info);
+        logMsg(CLIENT_CONNECTED);
+        loggingInFile(logFile, CLIENT_CONNECTED);
     }
 
     @Override
@@ -112,29 +100,20 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
 
     @Override
     public void onDisconnect(Connection connection) {
-        String info = "Connection close";
-        logMsg(info);
-        loggingInFile(logFile, info);
+        logMsg(CONNECTION_CLOSE);
+        loggingInFile(logFile, CONNECTION_CLOSE);
     }
 
     @Override
     public void onException(Connection connection, Exception e) {
-        String info = "Connection exception: " + e;
-        logMsg(info);
-        loggingInFile(logFile, info);
+        logMsg(CONNECTION_EXCEPTION + e);
+        loggingInFile(logFile, CONNECTION_EXCEPTION + e);
     }
 
     private synchronized void logMsg(String msg) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                logConsole.append(msg + "\n");
-                logConsole.setCaretPosition(logConsole.getDocument().getLength());
-            }
+        SwingUtilities.invokeLater(() -> {
+            logConsole.append(msg + "\n");
+            logConsole.setCaretPosition(logConsole.getDocument().getLength());
         });
-    }
-
-    private String getTime() {
-        return " (" + LocalTime.now().format(dtf) + ") ";
     }
 }

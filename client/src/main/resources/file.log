@@ -1,86 +1,37 @@
-Connection ready
- (19:02:34) Client connected: Connection: /127.0.0.1: 50153
- (19:02:42) Adam: Check
- (19:02:43) Adam: log
- (19:02:45) Adam: file
-Connection ready
- (19:03:15) Client connected: Connection: /127.0.0.1: 50169
- (19:03:26) Kay: Hi
- (19:03:28) Kay: chec
- (19:03:31) Kay: log
-Connection ready
- (18:41:02) Client connected: Connection: /127.0.0.1: 1492
- (18:41:08) Din: Check
- (18:41:11) Din: logging
- (18:41:16) Din: in laptop
-Connection ready
- (18:49:26) Client connected: Connection: /127.0.0.1: 1560
- (18:49:36) Fil: Hi
- (18:49:42) Fil: Bye
-Connection close
- (18:49:45) Fil: /exit
- (18:49:50) Fil: well
- (18:49:52) Fil: no
-Connection ready
- (18:56:36) Client connected: Connection: /127.0.0.1: 1686
- (18:56:46) Nei: Hi
- (18:56:49) Nei: bye
-Connection close
- (18:56:52) Nei: /exit
-Connection ready
- (18:58:38) Client connected: Connection: /127.0.0.1: 1701
- (18:58:38) Client connected: Connection: /127.0.0.1: 1701
- (18:58:50) Ury: Hi hi
- (18:58:50) Ury: Hi hi
- (18:58:52) Ury: bye
- (18:58:52) Ury: bye
-Connection close
- (18:58:55) Ury: /exit
- (18:58:55) Ury: /exit
- (18:59:20) Client connected: Connection: /127.0.0.1: 1708
-Connection ready
- (18:59:20) Client connected: Connection: /127.0.0.1: 1708
- (18:59:20) Client connected: Connection: /127.0.0.1: 1708
- (18:59:30) Jey: Hihi
- (18:59:30) Jey: Hihi
- (18:59:30) Jey: Hihi
- (18:59:32) Jey: bb
- (18:59:32) Jey: bb
- (18:59:32) Jey: bb
-Connection close
- (18:59:36) Jey: /exit
- (18:59:36) Jey: /exit
- (18:59:36) Jey: /exit
- (18:59:52) Client disconnected: Connection: /127.0.0.1: 1708
- (18:59:52) Client disconnected: Connection: /127.0.0.1: 1708
-Connection ready
- (19:03:50) Client connected: Connection: /127.0.0.1: 1773
- (19:03:50) Client connected: Connection: /127.0.0.1: 1773
- (19:03:50) Client connected: Connection: /127.0.0.1: 1773
- (19:03:56) Chad: hihi
- (19:03:56) Chad: hihi
- (19:03:56) Chad: hihi
- (19:03:59) Chad: bb
- (19:03:59) Chad: bb
- (19:03:59) Chad: bb
-Connection close
- (19:04:03) Client disconnected: Connection: /127.0.0.1: 1773
- (19:04:03) Client disconnected: Connection: /127.0.0.1: 1773
-Connection ready
- (16:49:17) Client connected: Connection: /127.0.0.1: 1731
- (16:49:27) Кир: Хай
- (16:49:41) Кир: Проверка работы чата
-Connection ready
- (16:49:58) Client connected: Connection: /127.0.0.1: 1737
- (16:49:58) Client connected: Connection: /127.0.0.1: 1737
- (16:50:09) Джейн: Привет
- (16:50:09) Джейн: Привет
- (16:50:25) Джейн: Тест второго подключения
- (16:50:25) Джейн: Тест второго подключения
- (16:50:39) Кир: Привет Джейн
- (16:50:39) Кир: Привет Джейн
- (16:50:57) Кир: Разрыв
- (16:50:57) Кир: Разрыв
-Connection close
- (16:51:03) Client disconnected: Connection: /127.0.0.1: 1731
-Connection close
+Check rewrite
+
+
+ (23:59:38) nected: 
+ (23:59:38) ) Client connected: Connection: /127.0.0.1: 10072
+ (23:59:43) ) Ывыв: выф
+ (23:59:44) ) Ывыв: вфыв
+ (23:59:45) ) Ывыв: авы
+ (23:59:46) ) Ывыв: выава
+ (00:06:26) Client connected: 
+ (00:06:26)  (00:06:25) Client connected: Connection: /127.0.0.1: 10137
+ (00:06:33)  (00:06:33) ываыв: выав
+ (00:06:34)  (00:06:34) ываыв: ываыв
+ (00:06:34)  (00:06:34) ываыв: выаыв
+ (00:08:25) Client connected: 
+ (00:08:25)  (00:08:25) Client connected: Connection: /127.0.0.1: 10157
+ (00:08:32)  (00:08:32) Ваааау: ываы
+ (00:08:33)  (00:08:33) Ваааау: ыва
+ (00:08:34)  (00:08:34) Ваааау: выаыыва
+ (00:08:35)  (00:08:35) Ваааау: ываыва
+ (00:12:03) Client connected: 
+ (00:12:03)  (00:12:03) Client connected: Connection: /127.0.0.1: 10192
+ (00:12:09)  (00:12:09) ааааааааааааааа: фывыф
+ (00:12:10)  (00:12:10) ааааааааааааааа: выфвывф
+ (00:12:12)  (00:12:12) ааааааааааааааа: фывфывыфв
+ (00:14:52) Connection exception: java.net.ConnectException: Connection refused: connect
+ (00:15:07) Client connected: 
+ (00:15:07)  (00:15:07) Client connected: Connection: /127.0.0.1: 10236
+ (00:15:18)  (00:15:18) Победный: Да
+ (00:15:19)  (00:15:19) Победный: ыфв
+ (00:15:20)  (00:15:20) Победный: аваывапвы
+ (00:16:35) Client connected: 
+ (00:16:35)  (00:16:35) Client connected: Connection: /127.0.0.1: 10251
+ (00:16:45)  (00:16:45) ДаааНеее: ыфвыа
+ (00:16:46)  (00:16:46) ДаааНеее: выаываы
+ (00:16:47)  (00:16:47) ДаааНеее: ываываавыаыв
+ (00:20:18) Client connected: 

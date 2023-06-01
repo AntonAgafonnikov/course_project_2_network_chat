@@ -2,36 +2,29 @@ package ru.netology;
 
 import java.io.*;
 import java.net.ServerSocket;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import static ru.netology.Logger.loggingInFile;
+import static ru.netology.Logger.*;
 
 public class Server implements ConnectionListener{
     private final ArrayList<Connection> connectionsList = new ArrayList<>();
     private static final File logFile = new File("server/src/main/resources/file.log");
     private static final File settingsFile = new File("server/src/main/resources/settingsServer.txt");
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public static void main(String[] args) throws IOException {
-        if(!logFile.exists()) {
-            logFile.createNewFile();
-        }
-        if(!settingsFile.exists()) {
-            settingsFile.createNewFile();
-        }
+        createSettingsFile(settingsFile);
+        createLogFile(logFile);
         new Server();
     }
 
     private Server() throws IOException {
-        System.out.println(getTime() + "Server running...");
+        System.out.println(loggingInFile(logFile, "Server running..."));
         try (ServerSocket serverSocket = new ServerSocket(getPort())) {
             while (true) {
                 try {
                     new Connection(this, serverSocket.accept());
                 } catch (IOException e) {
-                    System.out.println(getTime() + "Connection exception " + e);
+                    System.out.println(loggingInFile(logFile,CONNECTION_EXCEPTION + e));
                 }
             }
         }
@@ -48,41 +41,29 @@ public class Server implements ConnectionListener{
     @Override
     public synchronized void onConnectionReady(Connection connection) {
         connectionsList.add(connection);
-        String info = getTime() + "Client connected: " + connection;
-        sendAllConnection(connection, info);
-        loggingInFile(logFile, info);
+        sendAllConnection(loggingInFile(logFile, CLIENT_CONNECTED + connection));
     }
 
     @Override
     public synchronized void onReceiveString(Connection connection, String msg) {
-        String info = getTime() + msg;
-        sendAllConnection(connection, info);
-        loggingInFile(logFile, msg);
+        sendAllConnection(loggingInFile(logFile, msg));
     }
 
     @Override
     public synchronized void onDisconnect(Connection connection) {
         connectionsList.remove(connection);
-        String info = getTime() + "Client disconnected: " + connection;
-        sendAllConnection(connection, info);
-        loggingInFile(logFile, info);
+        sendAllConnection(loggingInFile(logFile, CLIENT_DISCONNECTED + connection));
     }
 
     @Override
     public synchronized void onException(Connection connection, Exception e) {
-        String info = getTime() + "Connection exception:" + e;
-        System.out.println(info);
-        loggingInFile(logFile, info);
+        System.out.println(loggingInFile(logFile, CONNECTION_EXCEPTION + e));
     }
 
-    private void sendAllConnection(Connection currentConnection, String info) {
+    private void sendAllConnection(String info) {
         System.out.println(info);
         for (Connection connection : connectionsList) {
             connection.sendMsg(info);
         }
-    }
-
-    private String getTime() {
-        return " (" + LocalTime.now().format(dtf) + ") ";
     }
 }
