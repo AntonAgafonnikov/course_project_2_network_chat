@@ -49,6 +49,12 @@
             <artifactId>connection</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>ru.netology</groupId>
+            <artifactId>logger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

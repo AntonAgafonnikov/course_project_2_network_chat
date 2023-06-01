@@ -9,6 +9,8 @@ import java.io.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+import static ru.netology.Logger.loggingInFile;
+
 public class ClientWindow extends JFrame implements ActionListener, ConnectionListener {
     private static final int WIDTH = 600;
     private static final int HEIGHT = 400;
@@ -61,7 +63,7 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
         } catch (IOException e) {
             String info = "Connection exception: " + e;
             logMsg(info);
-            loggingInFile(info);
+            loggingInFile(logFile, info);
         }
     }
 
@@ -99,27 +101,27 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
     public void onConnectionReady(Connection connection) {
         String info = "Connection ready";
         logMsg(info);
-        loggingInFile(info);
+        loggingInFile(logFile, info);
     }
 
     @Override
     public void onReceiveString(Connection connection, String msg) {
         logMsg(msg);
-        loggingInFile(msg);
+        loggingInFile(logFile, msg);
     }
 
     @Override
     public void onDisconnect(Connection connection) {
         String info = "Connection close";
         logMsg(info);
-        loggingInFile(info);
+        loggingInFile(logFile, info);
     }
 
     @Override
     public void onException(Connection connection, Exception e) {
         String info = "Connection exception: " + e;
         logMsg(info);
-        loggingInFile(info);
+        loggingInFile(logFile, info);
     }
 
     private synchronized void logMsg(String msg) {
@@ -130,16 +132,6 @@ public class ClientWindow extends JFrame implements ActionListener, ConnectionLi
                 logConsole.setCaretPosition(logConsole.getDocument().getLength());
             }
         });
-    }
-    public void loggingInFile(String msg) {
-        try (BufferedWriter bwLog = new BufferedWriter(new FileWriter(logFile, true))){
-            bwLog.write(msg);
-            bwLog.newLine();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            loggingInFile(e.toString());
-        }
     }
 
     private String getTime() {

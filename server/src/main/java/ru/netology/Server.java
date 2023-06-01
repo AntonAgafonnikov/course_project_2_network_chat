@@ -6,6 +6,8 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import static ru.netology.Logger.loggingInFile;
+
 public class Server implements ConnectionListener{
     private final ArrayList<Connection> connectionsList = new ArrayList<>();
     private static final File logFile = new File("server/src/main/resources/file.log");
@@ -48,14 +50,14 @@ public class Server implements ConnectionListener{
         connectionsList.add(connection);
         String info = getTime() + "Client connected: " + connection;
         sendAllConnection(connection, info);
-        loggingInFile(info);
+        loggingInFile(logFile, info);
     }
 
     @Override
     public synchronized void onReceiveString(Connection connection, String msg) {
         String info = getTime() + msg;
         sendAllConnection(connection, info);
-        loggingInFile(info);
+        loggingInFile(logFile, msg);
     }
 
     @Override
@@ -63,31 +65,20 @@ public class Server implements ConnectionListener{
         connectionsList.remove(connection);
         String info = getTime() + "Client disconnected: " + connection;
         sendAllConnection(connection, info);
-        loggingInFile(info);
+        loggingInFile(logFile, info);
     }
 
     @Override
     public synchronized void onException(Connection connection, Exception e) {
         String info = getTime() + "Connection exception:" + e;
         System.out.println(info);
-        loggingInFile(info);
+        loggingInFile(logFile, info);
     }
 
     private void sendAllConnection(Connection currentConnection, String info) {
         System.out.println(info);
         for (Connection connection : connectionsList) {
             connection.sendMsg(info);
-        }
-    }
-
-    public void loggingInFile(String msg) {
-        try (BufferedWriter bwLog = new BufferedWriter(new FileWriter(logFile, true))){
-            bwLog.write(msg);
-            bwLog.newLine();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            loggingInFile(e.toString());
         }
     }
 
